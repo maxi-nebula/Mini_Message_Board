@@ -1,5 +1,25 @@
 <html>
-  <body>
-    <%= messages %>
+  <head>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="body">
+    <h1 class="titleCard"><%= title %></h1>
+
+    <ul>
+      <div class="holderCard">
+        <% messages.forEach(message => { %>
+
+        <div class="messageBox">
+          <div class="nameHolder"><%= message.user %></div>
+          <div class="textSession"><%= message.text %></div>
+          <div class="timeStamp">
+            <%= dayjs(message.added).format("ddd MMM D YYYY h:mm A") %>
+          </div>
+        </div>
+
+        <% }) %>
+      </div>
+    </ul>
+    <button id="addButton">Send a new message</button>
   </body>
 </html>
