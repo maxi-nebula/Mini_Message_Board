@@ -15,10 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/", newMessageRouter);
-app.post("/newMessage", (req, res) => {
+/*app.post("/newMessage", (req, res) => {
   const { user, text } = req.body;
   messages.push({ text, user, added: new Date() });
-});
+});*/
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
