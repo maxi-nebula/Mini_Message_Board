@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="/style.css" />
+    <script src="/main.js" defer></script>
   </head>
   <body class="body">
     <h1 class="titleCard"><%= title %></h1>
@@ -21,5 +22,21 @@
       </div>
     </ul>
     <button id="addButton">Send a new message</button>
+    <div>
+      <form action="/newMessage" class="form" method="POST">
+        <div class="nameHolder">New Message</div>
+        <div class="Control_section">
+          <div>
+            <label for="sender">Sender</label>
+            <label for="messagetext"> Message</label>
+          </div>
+          <div>
+            <input type="text" name="user" />
+            <input type="text" name="text" />
+          </div>
+        </div>
+        <div><input type="Submit" Value="Send Message" /></div>
+      </form>
+    </div>
   </body>
 </html>
